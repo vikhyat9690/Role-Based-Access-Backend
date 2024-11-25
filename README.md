@@ -1,45 +1,46 @@
-Role-Based Access Control Backend
-A robust backend application built with Express.js that implements authentication and role-based authorization. This project secures access to resources based on user roles (e.g., user, admin).
+📥 Installation
+Follow these steps to set up the project locally:
 
-🚀 Features
-Authentication: Secure user login and registration using JWT.
-Role-Based Authorization: Enforces access restrictions based on roles.
-Protected Routes: API endpoints accessible only to authenticated users with specific roles.
-Scalable Architecture: Modular and maintainable code structure.
-🛠️ Technologies Used
-Node.js – Backend runtime environment.
-Express.js – Web framework for Node.js.
-JWT – Secure user authentication with JSON Web Tokens.
-bcrypt – Password hashing for security.
-MongoDB – Database for storing user data and roles.
-dotenv – For managing environment variables.
-📦 Installation
-1. Clone the Repository
+
+
+1️⃣ Clone the Repository
 bash
 Copy code
 git clone https://github.com/vikhyat9690/Role-Based-Access-Backend.git
 cd Role-Based-Access-Backend
-2. Install Dependencies
+
+
+2️⃣ Install Dependencies
 bash
 Copy code
 npm install
-3. Configure Environment Variables
+
+
+3️⃣ Set Up Environment Variables
 Create a .env file in the root directory and add the following:
+
+
 
 env
 Copy code
 PORT=5000
-MONGO_URI=<your_mongo_connection_string>
+MONGO_URI=<your_mongodb_connection_string>
 JWT_SECRET=<your_jwt_secret>
-4. Start the Server
+
+
+4️⃣ Start the Server
 bash
 Copy code
 npm start
-The server will start at http://localhost:5000.
+The server will run at http://localhost:5000.
+
+
 
 📖 API Documentation
 Authentication Endpoints
-🔐 Register User
+
+
+1. Register User
 POST /register
 Request Body:
 json
@@ -47,7 +48,7 @@ Copy code
 {
   "email": "example@example.com",
   "password": "password123",
-  "role": "user" // Options: "user", "admin"
+  "role": "user" // "user" or "admin"
 }
 Response:
 json
@@ -55,7 +56,9 @@ Copy code
 {
   "message": "User registered successfully"
 }
-🔐 Login User
+
+
+2. Login User
 POST /login
 Request Body:
 json
@@ -70,8 +73,14 @@ Copy code
 {
   "token": "<jwt_token>"
 }
+
+
+
 Protected Endpoints
-🖥️ User Dashboard
+
+
+
+1. User Dashboard
 GET /dashboard
 Headers:
 json
@@ -85,7 +94,10 @@ Copy code
 {
   "message": "Welcome to the user dashboard"
 }
-⚙️ Admin Panel
+
+
+
+2. Admin Panel
 GET /admin
 Headers:
 json
@@ -98,21 +110,30 @@ json
 Copy code
 {
   "message": "Welcome to the admin panel",
-  "users": [/* List of users */]
+  "users": [/* list of users */]
 }
-🗂️ Folder Structure
+
+
+
+📂 Folder Structure
 bash
 Copy code
 Role-Based-Access-Backend/
-├── controllers/       # Business logic for routes
+├── controllers/       # Route logic
 ├── middleware/        # Authentication and authorization middleware
-├── models/            # Mongoose schemas
+├── models/            # Database models (e.g., User schema)
 ├── routes/            # API route definitions
-├── .env               # Environment variables
-├── server.js          # Main application entry point
-└── README.md          # Project documentation
+├── .env               # Environment configuration
+├── server.js          # Entry point of the application
+└── README.md          # Documentation
+
+
 👤 Author
 Vikhyat Garg
 GitHub Profile
-📄 License
+
+
+
+📜 License
 This project is licensed under the MIT License.
+
